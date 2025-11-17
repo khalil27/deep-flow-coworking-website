@@ -37,35 +37,66 @@ export default function Pricing() {
     setEditMode(false)
   }
 
-  const pricingCategories = [
-    {
-      title: 'Coworking Space',
-      items: [
-        { name: 'Half Day', key: 'halfDay' as const },
-        { name: 'Full Day', key: 'fullDay' as const },
-        { name: 'Weekly Pass', key: 'week' as const },
-        { name: 'Two Weeks', key: 'twoWeeks' as const },
-        { name: 'Monthly Membership', key: 'month' as const },
-      ]
-    },
-    {
-      title: 'Meeting & Training',
-      items: [
-        { name: 'Meeting Room (per hour)', key: 'meetingRoomHour' as const },
-        { name: 'Conference Room (2 hours)', key: 'conferenceRoom2h' as const },
-        { name: 'Training Room (5 hours)', key: 'trainingRoom5h' as const },
-      ]
-    },
-    {
-      title: 'Additional Services',
-      items: [
-        { name: 'Domiciliation (per month)', key: 'domiciliation' as const },
-      ]
-    },
+  const coworkingPrices = [
+    { name: 'Half Day', key: 'halfDay' as const },
+    { name: 'Full Day', key: 'fullDay' as const },
+    { name: 'Weekly Pass', key: 'week' as const },
+    { name: 'Two Weeks', key: 'twoWeeks' as const },
+    { name: 'Monthly Membership', key: 'month' as const },
   ]
 
+  const meetingRoomPrices = [
+    { name: 'Meeting Room (per hour)', key: 'meetingRoomHour' as const },
+    { name: 'Conference Room (2 hours)', key: 'conferenceRoom2h' as const },
+  ]
+
+  const trainingRoomPrices = [
+    { name: 'Training Room (5 hours)', key: 'trainingRoom5h' as const },
+  ]
+
+  const domiciliationPrices = [
+    { name: 'Domiciliation (per month)', key: 'domiciliation' as const },
+  ]
+
+  // Component for scrollable price table
+  const PriceTable = ({ items, title }: { items: any[], title: string }) => (
+    <div className="bg-card rounded-xl border border-border overflow-hidden">
+      <div className="bg-gradient-to-r from-primary to-accent p-6">
+        <h3 className="text-xl font-bold text-white">{title}</h3>
+      </div>
+      <div className="overflow-x-auto">
+        <div className="p-6 min-w-min">
+          <div className="flex gap-4">
+            {items.map((item) => (
+              <div
+                key={item.key}
+                className="flex flex-col items-center justify-center bg-muted rounded-lg p-6 w-48 flex-shrink-0"
+              >
+                <span className="text-foreground font-medium text-center mb-3">{item.name}</span>
+                {editMode ? (
+                  <div className="flex items-center gap-2">
+                    <span className="text-muted-foreground">Dt</span>
+                    <input
+                      type="number"
+                      value={tempPrices[item.key]}
+                      onChange={(e) => handleEdit(item.key, Number(e.target.value))}
+                      className="w-20 px-3 py-2 border border-border rounded-lg text-foreground bg-background focus:outline-none focus:ring-2 focus:ring-accent text-center"
+                      min="0"
+                    />
+                  </div>
+                ) : (
+                  <span className="text-2xl font-bold text-accent">{prices[item.key]} Dt</span>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+
   return (
-    <section id="pricing" className="py-20 sm:py-32 bg-background">
+    <section className="py-20 sm:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-16">
@@ -73,7 +104,7 @@ export default function Pricing() {
             Pricing Plans
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Flexible pricing for every need. All prices are in USD.
+            Flexible pricing for every need. All prices are in Tunisian Dinars (Dt).
           </p>
           <button
             onClick={() => setEditMode(!editMode)}
@@ -87,42 +118,11 @@ export default function Pricing() {
           </button>
         </div>
 
-        {/* Pricing table */}
         <div className="space-y-8">
-          {pricingCategories.map((category, idx) => (
-            <div key={idx} className="bg-card rounded-xl border border-border overflow-hidden">
-              <div className="bg-gradient-to-r from-primary to-accent p-6">
-                <h3 className="text-xl font-bold text-white">{category.title}</h3>
-              </div>
-
-              <div className="p-6">
-                <div className="space-y-4">
-                  {category.items.map((item) => (
-                    <div
-                      key={item.key}
-                      className="flex justify-between items-center pb-4 border-b border-border last:border-0 last:pb-0"
-                    >
-                      <span className="text-foreground font-medium">{item.name}</span>
-                      {editMode ? (
-                        <div className="flex items-center gap-2">
-                          <span className="text-muted-foreground">Dt</span>
-                          <input
-                            type="number"
-                            value={tempPrices[item.key]}
-                            onChange={(e) => handleEdit(item.key, Number(e.target.value))}
-                            className="w-20 px-3 py-1 border border-border rounded-lg text-foreground bg-background focus:outline-none focus:ring-2 focus:ring-accent"
-                            min="0"
-                          />
-                        </div>
-                      ) : (
-                        <span className="text-lg font-bold text-accent">{prices[item.key]}Dt</span>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
+          <PriceTable items={coworkingPrices} title="Coworking Space" />
+          <PriceTable items={meetingRoomPrices} title="Meeting Rooms" />
+          <PriceTable items={trainingRoomPrices} title="Training Rooms" />
+          <PriceTable items={domiciliationPrices} title="Domiciliation" />
         </div>
 
         {editMode && (

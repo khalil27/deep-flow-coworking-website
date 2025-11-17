@@ -25,11 +25,14 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right placeholder */}
-          <div className="relative h-96 sm:h-[500px] bg-white/10 rounded-2xl border-2 border-white/20 flex items-center justify-center backdrop-blur-sm">
-            <div className="text-center">
-              <div className="w-32 h-32 bg-white/10 rounded-full mx-auto mb-4"></div>
-              <p className="text-white/60 text-lg">Hero Image</p>
+          <div className="relative h-96 sm:h-[500px] bg-white/10 rounded-2xl border-2 border-white/20 flex items-center justify-center backdrop-blur-sm overflow-hidden">
+            <img 
+              src="/logo_avec_font_darck.png" 
+              alt="Deep Flow Coworking Hero" 
+              className="w-full h-full object-cover"
+            />
+            {/* Fallback placeholder if image not found */}
+            <div className="absolute inset-0 bg-white/10 flex items-center justify-center">
             </div>
           </div>
         </div>
