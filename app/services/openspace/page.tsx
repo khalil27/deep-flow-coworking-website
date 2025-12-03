@@ -7,9 +7,10 @@ import Link from 'next/link'
 
 const openspaceOffers = [
   { id: 1, name: 'Half Day', price: 10 },
-  { id: 2, name: 'Full Day', price: 14 },
+  { id: 2, name: 'Full Day', price: 15 },
   { id: 3, name: 'Weekly', price: 60 },
-  { id: 5, name: 'Monthly', price: 160 }
+  { id: 4, name: '2 Weeks', price: 100 },
+  { id: 5, name: 'Monthly', price: 170 }
 ]
 
 export default function OpenspacePage() {
