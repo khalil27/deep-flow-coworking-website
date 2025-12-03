@@ -55,7 +55,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-bold text-foreground mb-1">Location</h3>
-                  <p className="text-muted-foreground">123 Business Street<br />Downtown District<br />Your City, ST 12345</p>
+                  <p className="text-muted-foreground">28 Boukhara Street<br />Ariana 2037<br />Ennasr 1, Tunisia</p>
                 </div>
               </div>
 
@@ -65,7 +65,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-bold text-foreground mb-1">Phone</h3>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                  <p className="text-muted-foreground">+216 94 317 723</p>
                 </div>
               </div>
 
@@ -75,7 +75,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-bold text-foreground mb-1">Email</h3>
-                  <p className="text-muted-foreground">hello@deepflowcoworking.com</p>
+                  <p className="text-muted-foreground">contact@deepflowcoworking.tn</p>
                 </div>
               </div>
             </div>
@@ -97,7 +97,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
-                    placeholder="John"
+                    placeholder="Foulen"
                   />
                 </div>
                 <div>
@@ -112,7 +112,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
-                    placeholder="Doe"
+                    placeholder="Ben foulen"
                   />
                 </div>
               </div>
@@ -129,7 +129,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
-                  placeholder="john@example.com"
+                  placeholder="foulen@example.com"
                 />
               </div>
 
