@@ -76,11 +76,10 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact</h3>
             <ul className="space-y-2 text-sm text-white/70">
-              <li>contact@deepflowcoworking.tn</li>
-              <li>+216 94 317 723</li>
-              <li>28 Boukhara Street</li>
-              <li>Ariana 2037</li>
-              <li>Ennasr 1, Tunisia</li>
+              <li>hello@deepflowcoworking.com</li>
+              <li>+1 (555) 123-4567</li>
+              <li>123 Business Street</li>
+              <li>Downtown District</li>
             </ul>
           </div>
         </div>
