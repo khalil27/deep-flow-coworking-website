@@ -8,9 +8,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="h-16 w-16 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
-                <img src="/logo_grand.png" alt="Deep Flow Logo" className="h-14 w-14 object-contain" />
-              </div>
+              <img src="/logoDeepFlow.png" alt="Deep Flow Logo" className="h-16 w-16 object-contain" />
               <span className="font-bold text-lg">Deep Flow</span>
             </div>
             <p className="text-white/70 text-sm">

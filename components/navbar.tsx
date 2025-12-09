@@ -28,9 +28,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center overflow-hidden">
-                <img src="/logo_grand.png" alt="Deep Flow Logo" className="w-full h-full object-cover" />
-              </div>
+              <img src="/logoDeepFlow.png" alt="Deep Flow Logo" className="w-16 h-16 object-contain" />
               <span className="font-bold text-lg text-primary hidden sm:inline">Deep Flow Coworking</span>
             </Link>
           </div>
