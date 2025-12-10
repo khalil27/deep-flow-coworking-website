@@ -22,7 +22,7 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="bg-white border-b border-border sticky top-0 z-50 shadow-sm">
+    <nav className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -40,7 +40,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                className="text-gray-700 hover:text-primary transition-colors duration-200 font-medium"
               >
                 {link.label}
               </Link>
@@ -49,19 +49,19 @@ export default function Navbar() {
             <div className="relative group">
               <Link
                 href="/services"
-                className="flex items-center gap-2 text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors duration-200 font-medium"
               >
                 Services
                 <ChevronDown size={18} className="group-hover:rotate-180 transition-transform duration-200" />
               </Link>
 
               {/* Dropdown menu */}
-              <div className="absolute left-0 mt-0 w-48 bg-white border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div className="absolute left-0 mt-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 {services.map((service) => (
                   <Link
                     key={service.href}
                     href={service.href}
-                    className="block px-4 py-3 text-foreground hover:bg-muted hover:text-primary transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg"
+                    className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg"
                   >
                     {service.label}
                   </Link>
@@ -80,7 +80,7 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-foreground hover:bg-muted focus:outline-none"
+            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -93,7 +93,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="block px-3 py-2 rounded-md text-foreground hover:bg-muted transition-colors duration-200"
+                className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
@@ -104,14 +104,14 @@ export default function Navbar() {
               <div className="flex items-center justify-between">
                 <Link
                   href="/services"
-                  className="flex-1 px-3 py-2 rounded-md text-foreground hover:bg-muted transition-colors duration-200"
+                  className="flex-1 px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 transition-colors duration-200"
                   onClick={() => setIsOpen(false)}
                 >
                   Services
                 </Link>
                 <button
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
-                  className="px-3 py-2 rounded-md text-foreground hover:bg-muted transition-colors duration-200"
+                  className="px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 transition-colors duration-200"
                 >
                   <ChevronDown
                     size={18}
@@ -126,7 +126,7 @@ export default function Navbar() {
                     <Link
                       key={service.href}
                       href={service.href}
-                      className="block px-3 py-2 rounded-md text-foreground hover:bg-muted hover:text-primary transition-colors duration-200"
+                      className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors duration-200"
                       onClick={() => {
                         setIsOpen(false)
                         setIsServicesOpen(false)
