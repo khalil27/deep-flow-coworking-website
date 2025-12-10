@@ -9,7 +9,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img src="/logoDeepFlow.png" alt="Deep Flow Logo" className="h-16 w-16 object-contain" />
-              <span className="font-bold text-lg text-primary">Deep Flow</span>
+              <span className="font-bold text-lg text-primary">Deep Flow Coworking</span>
             </div>
             <p className="text-gray-600 text-sm">
               Modern coworking spaces for productive professionals and creative teams.
@@ -74,10 +74,9 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-lg mb-4 text-primary">Contact</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li>hello@deepflowcoworking.com</li>
-              <li>+1 (555) 123-4567</li>
-              <li>123 Business Street</li>
-              <li>Downtown District</li>
+              <li>contact@deepflowcoworking.tn</li>
+              <li>+216 94 317 723</li>
+              <li>28, Rue Boukhara , Ennaser 1</li>
             </ul>
           </div>
         </div>
