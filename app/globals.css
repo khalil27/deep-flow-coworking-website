@@ -4,74 +4,82 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #A3BCC9;
-  --foreground: #0F1516;
-  --card: #ffffff;
-  --card-foreground: #0F1516;
-  --popover: #ffffff;
-  --popover-foreground: #0F1516;
-  --primary: #234C58;
-  --primary-foreground: #ffffff;
-  --secondary: #0F1516;
-  --secondary-foreground: #ffffff;
-  --muted: #E8EFF3;
-  --muted-foreground: #5A6B72;
-  --accent: #2D6B8A;
-  --accent-foreground: #ffffff;
+  --background: #FFFFFF;
+  /* White background for clean look */
+  --foreground: #1C2627;
+  /* Dark Grey/Cyan text */
+  --card: #FFFFFF;
+  --card-foreground: #1C2627;
+  --popover: #FFFFFF;
+  --popover-foreground: #1C2627;
+  --primary: #00A79D;
+  /* Teal Primary */
+  --primary-foreground: #FFFFFF;
+  --secondary: #234C58;
+  /* Dark Cyan/Blue Secondary */
+  --secondary-foreground: #FFFFFF;
+  --muted: #E0F2F1;
+  /* Light Teal Muted */
+  --muted-foreground: #234C58;
+  --accent: #E0F2F1;
+  --accent-foreground: #1C2627;
   --destructive: #DC2626;
-  --destructive-foreground: #ffffff;
-  --border: #D4DFE5;
-  --input: #ffffff;
-  --ring: #234C58;
-  --chart-1: #234C58;
-  --chart-2: #2D6B8A;
-  --chart-3: #A3BCC9;
-  --chart-4: #0F1516;
-  --chart-5: #5A6B72;
+  --destructive-foreground: #FFFFFF;
+  --border: #E5E7EB;
+  --input: #FFFFFF;
+  --ring: #00A79D;
+  --chart-1: #00A79D;
+  --chart-2: #234C58;
+  --chart-3: #1C2627;
+  --chart-4: #4FD1C5;
+  --chart-5: #2D3748;
   --radius: 0.625rem;
-  --sidebar: #ffffff;
-  --sidebar-foreground: #0F1516;
-  --sidebar-primary: #234C58;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #2D6B8A;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #D4DFE5;
-  --sidebar-ring: #234C58;
+  --sidebar: #F8FAFC;
+  --sidebar-foreground: #1C2627;
+  --sidebar-primary: #00A79D;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E0F2F1;
+  --sidebar-accent-foreground: #1C2627;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #00A79D;
 }
 
 .dark {
-  --background: #0F1516;
-  --foreground: #ffffff;
-  --card: #1a2a2e;
-  --card-foreground: #ffffff;
-  --popover: #1a2a2e;
-  --popover-foreground: #ffffff;
-  --primary: #2D6B8A;
-  --primary-foreground: #ffffff;
-  --secondary: #ffffff;
-  --secondary-foreground: #0F1516;
-  --muted: #2a3d42;
-  --muted-foreground: #A3BCC9;
-  --accent: #A3BCC9;
-  --accent-foreground: #0F1516;
+  --background: #1C2627;
+  /* Dark Grey/Cyan Background */
+  --foreground: #FFFFFF;
+  --card: #234C58;
+  /* Secondary color for cards in dark mode */
+  --card-foreground: #FFFFFF;
+  --popover: #234C58;
+  --popover-foreground: #FFFFFF;
+  --primary: #00A79D;
+  --primary-foreground: #FFFFFF;
+  --secondary: #00A79D;
+  /* Teal as secondary in dark mode for contrast */
+  --secondary-foreground: #1C2627;
+  --muted: #2A3B3D;
+  --muted-foreground: #A0AEC0;
+  --accent: #234C58;
+  --accent-foreground: #FFFFFF;
   --destructive: #EF4444;
-  --destructive-foreground: #ffffff;
-  --border: #2a3d42;
-  --input: #1a2a2e;
-  --ring: #2D6B8A;
-  --chart-1: #2D6B8A;
-  --chart-2: #A3BCC9;
-  --chart-3: #5A6B72;
-  --chart-4: #ffffff;
-  --chart-5: #D4DFE5;
-  --sidebar: #1a2a2e;
-  --sidebar-foreground: #ffffff;
-  --sidebar-primary: #2D6B8A;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #A3BCC9;
-  --sidebar-accent-foreground: #0F1516;
-  --sidebar-border: #2a3d42;
-  --sidebar-ring: #2D6B8A;
+  --destructive-foreground: #FFFFFF;
+  --border: #234C58;
+  --input: #2A3B3D;
+  --ring: #00A79D;
+  --chart-1: #00A79D;
+  --chart-2: #234C58;
+  --chart-3: #FFFFFF;
+  --chart-4: #4FD1C5;
+  --chart-5: #A0AEC0;
+  --sidebar: #1C2627;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #00A79D;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #234C58;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #234C58;
+  --sidebar-ring: #00A79D;
 }
 
 @theme inline {
@@ -119,16 +127,18 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
 
 /* Gradient styles for hero section */
+/* Gradient styles for hero section */
 .gradient-primary {
-  background: linear-gradient(135deg, #234C58 0%, #0F1516 100%);
+  background: linear-gradient(135deg, #234C58 0%, #1C2627 100%);
 }
 
 .gradient-accent {
-  background: linear-gradient(135deg, #2D6B8A 0%, #234C58 100%);
+  background: linear-gradient(135deg, #00A79D 0%, #234C58 100%);
 }
