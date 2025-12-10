@@ -54,5 +54,9 @@
   "typescript": "^5",
   "vaul": "^1.1.2",
   "zod": "3.25.76"
+},
+"optionalDependencies": {
+  "lightningcss": "^1.29.1",
+  "lightningcss-linux-x64-gnu": "^1.29.1"
 }
 }
