@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { Edit3, Check, X } from 'lucide-react'
 
 interface PricingItem {
   name: string
@@ -42,7 +43,7 @@ export default function Pricing() {
     { name: 'Full Day', key: 'fullDay' as const },
     { name: 'Weekly Pass', key: 'week' as const },
     { name: 'Two Weeks', key: 'twoWeeks' as const },
-    { name: 'Monthly Membership', key: 'month' as const },
+    { name: 'Monthly', key: 'month' as const },
   ]
 
   const meetingRoomPrices = [
@@ -58,35 +59,35 @@ export default function Pricing() {
     { name: 'Domiciliation (per month)', key: 'domiciliation' as const },
   ]
 
-  // Component for scrollable price table
   const PriceTable = ({ items, title }: { items: any[], title: string }) => (
-    <div className="bg-card rounded-xl border border-border overflow-hidden">
-      <div className="bg-gradient-to-r from-primary to-accent p-6">
-        <h3 className="text-xl font-bold text-white">{title}</h3>
+    <div className="bg-white rounded-2xl border border-[#e5e7eb]/60 overflow-hidden shadow-elevated animate-fade-in-up hover-lift" style={{animationDelay: `${['Coworking', 'Meeting', 'Training', 'Domiciliation'].indexOf(title.split(' ')[0]) * 0.1}s`}}>
+      <div className="bg-gradient-to-r from-[#334247] to-[#4f8fa3] p-8">
+        <h3 className="text-2xl font-bold text-white">{title}</h3>
       </div>
       <div className="overflow-x-auto">
-        <div className="p-6 min-w-min">
-          <div className="flex gap-4">
-            {items.map((item) => (
+        <div className="p-8 min-w-min">
+          <div className="flex gap-6 flex-wrap sm:flex-nowrap">
+            {items.map((item, idx) => (
               <div
                 key={item.key}
-                className="flex flex-col items-center justify-center bg-muted rounded-lg p-6 w-48 flex-shrink-0"
+                className="flex flex-col items-center justify-center bg-gradient-to-br from-[#f5f7f9] to-[#f0f2f4] rounded-xl p-8 w-56 flex-shrink-0 hover:shadow-elevated transition-smooth group hover-lift border border-[#e5e7eb]/40"
               >
-                <span className="text-foreground font-medium text-center mb-3">{item.name}</span>
+                <span className="text-[#334247] font-semibold text-center mb-4 text-base group-hover:text-[#4f8fa3] transition-colors">{item.name}</span>
                 {editMode ? (
-                  <div className="flex items-center gap-2">
-                    <span className="text-muted-foreground">Dt</span>
+                  <div className="flex items-center gap-2 w-full">
+                    <span className="text-[#6b7280] font-medium">Dt</span>
                     <input
                       type="number"
                       value={tempPrices[item.key]}
                       onChange={(e) => handleEdit(item.key, Number(e.target.value))}
-                      className="w-20 px-3 py-2 border border-border rounded-lg text-foreground bg-background focus:outline-none focus:ring-2 focus:ring-accent text-center"
+                      className="flex-1 px-3 py-2 border-2 border-[#4f8fa3] rounded-lg text-[#334247] bg-white focus:outline-none focus:ring-2 focus:ring-[#4f8fa3] text-center font-semibold"
                       min="0"
                     />
                   </div>
                 ) : (
-                  <span className="text-2xl font-bold text-accent">{prices[item.key]} Dt</span>
+                  <span className="text-4xl font-bold text-[#4f8fa3]">{prices[item.key]}</span>
                 )}
+                {!editMode && <span className="text-[#6b7280] text-sm mt-2 font-medium">Dt</span>}
               </div>
             ))}
           </div>
@@ -96,29 +97,39 @@ export default function Pricing() {
   )
 
   return (
-    <section className="py-20 sm:py-32 bg-background">
+    <section className="py-20 sm:py-32 bg-gradient-to-b from-white to-[#f9fafb]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+        <div className="text-center mb-20 animate-fade-in-up">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#334247] mb-6">
             Pricing Plans
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Flexible pricing for every need. All prices are in Tunisian Dinars (Dt).
+          <p className="text-lg text-[#6b7280] max-w-2xl mx-auto mb-12 leading-relaxed">
+            Flexible pricing for every need. Choose the plan that works best for you. All prices are in Tunisian Dinars (Dt).
           </p>
           <button
             onClick={() => setEditMode(!editMode)}
-            className={`px-6 py-2 rounded-lg font-semibold transition-colors duration-200 ${
+            className={`px-8 py-3 rounded-lg font-semibold transition-smooth flex items-center gap-2 mx-auto shadow-md ${
               editMode
-                ? 'bg-accent text-accent-foreground hover:opacity-90'
-                : 'bg-primary text-primary-foreground hover:bg-accent'
+                ? 'bg-red-500 text-white hover:bg-red-600'
+                : 'bg-[#334247] text-white hover:bg-[#4f8fa3]'
             }`}
           >
-            {editMode ? 'Done Editing' : 'Edit Prices'}
+            {editMode ? (
+              <>
+                <X size={20} />
+                Cancel Editing
+              </>
+            ) : (
+              <>
+                <Edit3 size={20} />
+                Edit Prices
+              </>
+            )}
           </button>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-10">
           <PriceTable items={coworkingPrices} title="Coworking Space" />
           <PriceTable items={meetingRoomPrices} title="Meeting Rooms" />
           <PriceTable items={trainingRoomPrices} title="Training Rooms" />
@@ -126,11 +137,12 @@ export default function Pricing() {
         </div>
 
         {editMode && (
-          <div className="mt-8 flex justify-center gap-4">
+          <div className="mt-12 flex justify-center gap-4 animate-fade-in-up">
             <button
               onClick={handleSave}
-              className="px-8 py-3 bg-accent text-accent-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity duration-200"
+              className="px-8 py-3 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition-smooth flex items-center gap-2 shadow-md"
             >
+              <Check size={20} />
               Save Changes
             </button>
             <button
@@ -138,7 +150,7 @@ export default function Pricing() {
                 setTempPrices(prices)
                 setEditMode(false)
               }}
-              className="px-8 py-3 border border-border text-foreground rounded-lg font-semibold hover:bg-muted transition-colors duration-200"
+              className="px-8 py-3 border-2 border-[#e5e7eb] text-[#334247] rounded-lg font-semibold hover:bg-[#f5f7f9] transition-smooth"
             >
               Cancel
             </button>

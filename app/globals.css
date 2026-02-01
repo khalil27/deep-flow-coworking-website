@@ -6,42 +6,43 @@
 :root {
   --background: #FFFFFF;
   /* White background for clean look */
-  --foreground: #1C2627;
-  /* Dark Grey/Cyan text */
+  --foreground: #334247;
+  /* Primary color for text */
   --card: #FFFFFF;
-  --card-foreground: #1C2627;
+  --card-foreground: #334247;
   --popover: #FFFFFF;
-  --popover-foreground: #1C2627;
-  --primary: #00A79D;
-  /* Teal Primary */
+  --popover-foreground: #334247;
+  --primary: #334247;
+  /* Primary brand color */
   --primary-foreground: #FFFFFF;
-  --secondary: #234C58;
-  /* Dark Cyan/Blue Secondary */
-  --secondary-foreground: #FFFFFF;
-  --muted: #E0F2F1;
-  /* Light Teal Muted */
-  --muted-foreground: #234C58;
-  --accent: #E0F2F1;
-  --accent-foreground: #1C2627;
+  --secondary: #b4c7d4;
+  /* Secondary color */
+  --secondary-foreground: #334247;
+  --muted: #f5f7f9;
+  /* Light grey */
+  --muted-foreground: #6b7280;
+  --accent: #4f8fa3;
+  /* Accent color */
+  --accent-foreground: #FFFFFF;
   --destructive: #DC2626;
   --destructive-foreground: #FFFFFF;
-  --border: #E5E7EB;
+  --border: #e5e7eb;
   --input: #FFFFFF;
-  --ring: #00A79D;
-  --chart-1: #00A79D;
-  --chart-2: #234C58;
-  --chart-3: #1C2627;
-  --chart-4: #4FD1C5;
-  --chart-5: #2D3748;
+  --ring: #4f8fa3;
+  --chart-1: #334247;
+  --chart-2: #4f8fa3;
+  --chart-3: #b4c7d4;
+  --chart-4: #f5f7f9;
+  --chart-5: #6b7280;
   --radius: 0.625rem;
-  --sidebar: #F8FAFC;
-  --sidebar-foreground: #1C2627;
-  --sidebar-primary: #00A79D;
+  --sidebar: #f5f7f9;
+  --sidebar-foreground: #334247;
+  --sidebar-primary: #334247;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #E0F2F1;
-  --sidebar-accent-foreground: #1C2627;
-  --sidebar-border: #E5E7EB;
-  --sidebar-ring: #00A79D;
+  --sidebar-accent: #b4c7d4;
+  --sidebar-accent-foreground: #334247;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #4f8fa3;
 }
 
 .dark {
@@ -129,16 +130,152 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-gradient-to-b from-[#fafbfc] to-[#ffffff] text-foreground;
   }
 }
 
-/* Gradient styles for hero section */
+/* Enhanced color utilities for visual harmony */
+.bg-subtle-primary {
+  background: linear-gradient(135deg, #f0f2f4 0%, #f5f7f9 100%);
+}
+
+.bg-subtle-accent {
+  background: rgba(79, 143, 163, 0.05);
+}
+
+.bg-gradient-section {
+  background: linear-gradient(180deg, rgba(51, 66, 71, 0.03) 0%, rgba(79, 143, 163, 0.02) 100%);
+}
+
+.border-subtle {
+  border-color: rgba(229, 231, 235, 0.6);
+}
+
+.text-brand-primary {
+  color: #334247;
+}
+
+.text-brand-secondary {
+  color: #6b7280;
+}
+
+.text-brand-accent {
+  color: #4f8fa3;
+}
+
+/* Enhanced shadow utilities */
+.shadow-elevated {
+  box-shadow: 0 10px 30px -5px rgba(51, 66, 71, 0.1), 0 4px 6px -2px rgba(51, 66, 71, 0.05);
+}
+
+.shadow-card {
+  box-shadow: 0 1px 3px rgba(51, 66, 71, 0.08);
+}
+
+/* Hover state utilities */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -6px rgba(51, 66, 71, 0.12);
+}
+
+/* Gradient overlays */
+.gradient-overlay-primary {
+  background: linear-gradient(135deg, rgba(51, 66, 71, 0.8) 0%, rgba(79, 143, 163, 0.8) 100%);
+}
+
 /* Gradient styles for hero section */
 .gradient-primary {
-  background: linear-gradient(135deg, #234C58 0%, #1C2627 100%);
+  background: linear-gradient(135deg, #334247 0%, #4f8fa3 100%);
 }
 
 .gradient-accent {
-  background: linear-gradient(135deg, #00A79D 0%, #234C58 100%);
+  background: linear-gradient(135deg, #4f8fa3 0%, #334247 100%);
+}
+
+/* Smooth animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out;
+}
+
+/* Smooth transitions for interactive elements */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Card elevation effect */
+.card-hover {
+  @apply hover:shadow-lg hover:scale-105;
 }
