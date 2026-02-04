@@ -1,12 +1,23 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import Link from "next/link"
 import { Menu, X, ChevronDown } from "lucide-react"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const pathname = usePathname()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -21,8 +32,15 @@ export default function Navbar() {
     { href: "/services/domiciliation", label: "Domiciliation" },
   ]
 
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/"
+    return pathname.startsWith(href)
+  }
+
   return (
-    <nav className="bg-white/95 backdrop-blur-sm border-b border-[#e5e7eb]/50 sticky top-0 z-50 shadow-card transition-smooth">
+    <nav className={`bg-gradient-to-r from-[#334247] via-[#3d5459] to-[#4f8fa3] sticky top-0 z-50 transition-all duration-300 ${
+      isScrolled ? 'shadow-2xl backdrop-blur-md bg-opacity-95' : 'shadow-elevated'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
