@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram } from "lucide-react"
+import Image from "next/image"
+import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -9,7 +10,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-4 animate-fade-in-up">
             <div className="flex items-center gap-3">
-              <img src="/android-chrome-192x192.png" alt="Deep Flow Logo" className="h-12 w-12 object-contain" />
+              <Image
+                src="/android-chrome-192x192.png"
+                alt="Deep Flow Logo"
+                width={48}
+                height={48}
+                sizes="48px"
+                className="object-contain"
+              />
               <div>
                 <h3 className="font-bold text-lg">Deep Flow</h3>
                 <p className="text-[#b4c7d4] text-xs">Coworking</p>
@@ -19,13 +27,13 @@ export default function Footer() {
               Modern coworking spaces for productive professionals and creative teams.
             </p>
             <div className="flex gap-4 pt-4">
-              <Link href="#" className="text-[#b4c7d4] hover:text-white transition-smooth p-2 rounded-lg hover:bg-gradient-to-r hover:from-[#4f8fa3] hover:to-[#334247] shadow-card">
+              <Link href="https://www.linkedin.com/company/deep-flow-coworking/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="text-[#b4c7d4] hover:text-white transition-smooth p-2 rounded-lg hover:bg-gradient-to-r hover:from-[#4f8fa3] hover:to-[#334247] shadow-card">
                 <Linkedin size={20} />
               </Link>
-              <Link href="#" className="text-[#b4c7d4] hover:text-white transition-smooth p-2 rounded-lg hover:bg-gradient-to-r hover:from-[#4f8fa3] hover:to-[#334247] shadow-card">
-                <Twitter size={20} />
+              <Link href="https://www.facebook.com/profile.php?id=61581890132266" target="_blank" rel="noopener noreferrer" className="text-[#b4c7d4] hover:text-white transition-smooth p-2 rounded-lg hover:bg-gradient-to-r hover:from-[#4f8fa3] hover:to-[#334247] shadow-card">
+                <Facebook size={20} />
               </Link>
-              <Link href="#" className="text-[#b4c7d4] hover:text-white transition-smooth p-2 rounded-lg hover:bg-gradient-to-r hover:from-[#4f8fa3] hover:to-[#334247] shadow-card">
+              <Link href="https://www.instagram.com/deep_flow_coworking/" target="_blank" rel="noopener noreferrer" className="text-[#b4c7d4] hover:text-white transition-smooth p-2 rounded-lg hover:bg-gradient-to-r hover:from-[#4f8fa3] hover:to-[#334247] shadow-card">
                 <Instagram size={20} />
               </Link>
             </div>

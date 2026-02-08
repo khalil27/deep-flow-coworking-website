@@ -33,16 +33,16 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 sm:py-32 bg-gradient-section">
+    <section id="contact" className="relative overflow-hidden py-20 sm:py-32 bg-gradient-to-br from-[#334247] to-[#4f8fa3]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
           {/* Contact info */}
-          <div className="space-y-10 animate-slide-in-left">
+          <div className="space-y-10 animate-slide-in-left text-white">
             <div>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#334247] mb-6 text-balance">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 text-balance">
                 Get in Touch
               </h2>
-              <p className="text-lg text-[#6b7280]">
+              <p className="text-lg text-[#b4c7d4]">
                 Have questions about our spaces? We're here to help and would love to discuss your workspace needs.
               </p>
             </div>
@@ -53,14 +53,14 @@ export default function Contact() {
                 { Icon: Phone, title: 'Phone', content: ['+216 94 317 723'] },
                 { Icon: Mail, title: 'Email', content: ['contact@deepflowcoworking.tn'] }
               ].map((item, idx) => (
-                <div key={idx} className="flex gap-5 animate-fade-in-up p-4 rounded-xl hover:bg-white/40 transition-smooth" style={{animationDelay: `${idx * 0.15}s`}}>
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#4f8fa3] to-[#334247] rounded-xl flex items-center justify-center flex-shrink-0 shadow-card">
-                    <item.Icon className="w-7 h-7 text-white" />
+                <div key={idx} className="flex gap-5 animate-fade-in-up p-4 rounded-xl hover:bg-white/10 transition-smooth" style={{animationDelay: `${idx * 0.15}s`}}>
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#b4c7d4] to-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-card">
+                    <item.Icon className="w-7 h-7 text-[#334247]" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-[#334247] mb-1 text-lg">{item.title}</h3>
+                    <h3 className="font-bold text-white mb-1 text-lg">{item.title}</h3>
                     {item.content.map((line, i) => (
-                      <p key={i} className="text-[#6b7280]">{line}</p>
+                      <p key={i} className="text-[#b4c7d4]">{line}</p>
                     ))}
                   </div>
                 </div>
@@ -70,11 +70,11 @@ export default function Contact() {
 
           {/* Contact form */}
           <div className="animate-slide-in-right">
-            <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-10 shadow-elevated border border-[#e5e7eb]/50 hover-lift">
+            <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-md rounded-2xl p-10 shadow-elevated border border-[#b4c7d4]/30 hover-lift">
               <div className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="firstName" className="block text-sm font-semibold text-[#334247] mb-2">
+                    <label htmlFor="firstName" className="block text-sm font-semibold text-white mb-2">
                       First Name
                     </label>
                     <input
@@ -84,12 +84,12 @@ export default function Contact() {
                       value={formData.firstName}
                       onChange={handleChange}
                       placeholder="John"
-                      className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-[#334247] placeholder-[#6b7280] focus:outline-none focus:ring-2 focus:ring-[#4f8fa3] transition-smooth"
+                      className="w-full px-4 py-3 border border-[#b4c7d4]/30 rounded-lg text-white bg-white/10 placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#b4c7d4] transition-smooth backdrop-blur-sm"
                       required
                     />
                   </div>
                   <div>
-                    <label htmlFor="lastName" className="block text-sm font-semibold text-[#334247] mb-2">
+                    <label htmlFor="lastName" className="block text-sm font-semibold text-white mb-2">
                       Last Name
                     </label>
                     <input
@@ -99,14 +99,14 @@ export default function Contact() {
                       value={formData.lastName}
                       onChange={handleChange}
                       placeholder="Doe"
-                      className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-[#334247] placeholder-[#6b7280] focus:outline-none focus:ring-2 focus:ring-[#4f8fa3] transition-smooth"
+                      className="w-full px-4 py-3 border border-[#b4c7d4]/30 rounded-lg text-white bg-white/10 placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#b4c7d4] transition-smooth backdrop-blur-sm"
                       required
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-[#334247] mb-2">
+                  <label htmlFor="email" className="block text-sm font-semibold text-white mb-2">
                     Email Address
                   </label>
                   <input
@@ -116,13 +116,13 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="john@example.com"
-                    className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-[#334247] placeholder-[#6b7280] focus:outline-none focus:ring-2 focus:ring-[#4f8fa3] transition-smooth"
+                    className="w-full px-4 py-3 border border-[#b4c7d4]/30 rounded-lg text-white bg-white/10 placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#b4c7d4] transition-smooth backdrop-blur-sm"
                     required
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-semibold text-[#334247] mb-2">
+                  <label htmlFor="subject" className="block text-sm font-semibold text-white mb-2">
                     Subject
                   </label>
                   <input
@@ -132,13 +132,13 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="I'm interested in..."
-                    className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-[#334247] placeholder-[#6b7280] focus:outline-none focus:ring-2 focus:ring-[#4f8fa3] transition-smooth"
+                    className="w-full px-4 py-3 border border-[#b4c7d4]/30 rounded-lg text-white bg-white/10 placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#b4c7d4] transition-smooth backdrop-blur-sm"
                     required
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-[#334247] mb-2">
+                  <label htmlFor="message" className="block text-sm font-semibold text-white mb-2">
                     Message
                   </label>
                   <textarea
@@ -148,21 +148,21 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="Your message..."
                     rows={5}
-                    className="w-full px-4 py-3 border border-[#e5e7eb] rounded-lg text-[#334247] placeholder-[#6b7280] focus:outline-none focus:ring-2 focus:ring-[#4f8fa3] transition-smooth resize-none"
+                    className="w-full px-4 py-3 border border-[#b4c7d4]/30 rounded-lg text-white bg-white/10 placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#b4c7d4] transition-smooth resize-none backdrop-blur-sm"
                     required
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-[#334247] to-[#4f8fa3] text-white py-4 rounded-lg hover:shadow-elevated transition-smooth font-semibold flex items-center justify-center gap-2 group transform hover:scale-105"
+                  className="w-full bg-gradient-to-r from-[#b4c7d4] to-white text-[#334247] py-4 rounded-lg hover:shadow-elevated transition-smooth font-semibold flex items-center justify-center gap-2 group transform hover:scale-105"
                 >
                   <Send size={20} className="group-hover:translate-x-1 transition-transform" />
                   Send Message
                 </button>
 
                 {submitted && (
-                  <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-green-800 text-center animate-fade-in">
+                  <div className="bg-green-500/20 border border-green-400/50 rounded-lg p-4 text-green-200 text-center animate-fade-in backdrop-blur-sm">
                     Thank you! We'll get back to you shortly.
                   </div>
                 )}
@@ -173,10 +173,10 @@ export default function Contact() {
 
         {/* Google Maps Section */}
         <div className="text-center mb-12 animate-fade-in-up">
-          <h3 className="text-3xl sm:text-4xl font-bold text-[#334247] mb-4">
+          <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Find Us Here
           </h3>
-          <p className="text-[#6b7280] text-lg">
+          <p className="text-[#b4c7d4] text-lg">
             Visit our coworking space in the heart of Ennasr
           </p>
         </div>

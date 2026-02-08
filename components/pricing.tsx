@@ -60,8 +60,8 @@ export default function Pricing() {
   ]
 
   const PriceTable = ({ items, title }: { items: any[], title: string }) => (
-    <div className="bg-white rounded-2xl border border-[#e5e7eb]/60 overflow-hidden shadow-elevated animate-fade-in-up hover-lift" style={{animationDelay: `${['Coworking', 'Meeting', 'Training', 'Domiciliation'].indexOf(title.split(' ')[0]) * 0.1}s`}}>
-      <div className="bg-gradient-to-r from-[#334247] to-[#4f8fa3] p-8">
+    <div className="bg-white/10 backdrop-blur-md rounded-2xl border border-[#b4c7d4]/30 overflow-hidden shadow-elevated animate-fade-in-up hover-lift" style={{animationDelay: `${['Coworking', 'Meeting', 'Training', 'Domiciliation'].indexOf(title.split(' ')[0]) * 0.1}s`}}>
+      <div className="bg-gradient-to-r from-[#b4c7d4]/20 to-white/10 p-8 border-b border-[#b4c7d4]/20">
         <h3 className="text-2xl font-bold text-white">{title}</h3>
       </div>
       <div className="overflow-x-auto">
@@ -70,7 +70,7 @@ export default function Pricing() {
             {items.map((item, idx) => (
               <div
                 key={item.key}
-                className="flex flex-col items-center justify-center bg-gradient-to-br from-[#f5f7f9] to-[#f0f2f4] rounded-xl p-8 w-56 flex-shrink-0 hover:shadow-elevated transition-smooth group hover-lift border border-[#e5e7eb]/40"
+                className="flex flex-col items-center justify-center bg-white rounded-xl p-8 w-56 flex-shrink-0 hover:shadow-elevated transition-smooth group hover-lift border border-[#e5e7eb]"
               >
                 <span className="text-[#334247] font-semibold text-center mb-4 text-base group-hover:text-[#4f8fa3] transition-colors">{item.name}</span>
                 {editMode ? (
@@ -97,22 +97,22 @@ export default function Pricing() {
   )
 
   return (
-    <section className="py-20 sm:py-32 bg-gradient-to-b from-white to-[#f9fafb]">
+    <section className="relative overflow-hidden py-20 sm:py-32 bg-gradient-to-br from-[#334247] to-[#4f8fa3]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-20 animate-fade-in-up">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#334247] mb-6">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
             Pricing Plans
           </h2>
-          <p className="text-lg text-[#6b7280] max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="text-lg text-[#b4c7d4] max-w-2xl mx-auto mb-12 leading-relaxed">
             Flexible pricing for every need. Choose the plan that works best for you. All prices are in Tunisian Dinars (Dt).
           </p>
           <button
             onClick={() => setEditMode(!editMode)}
-            className={`px-8 py-3 rounded-lg font-semibold transition-smooth flex items-center gap-2 mx-auto shadow-md ${
+            className={`px-8 py-3 rounded-lg font-semibold transition-smooth flex items-center gap-2 mx-auto shadow-elevated transform hover:scale-105 ${
               editMode
-                ? 'bg-red-500 text-white hover:bg-red-600'
-                : 'bg-[#334247] text-white hover:bg-[#4f8fa3]'
+                ? 'bg-red-500/80 text-white hover:bg-red-600'
+                : 'bg-gradient-to-r from-[#b4c7d4] to-white text-[#334247] hover:shadow-2xl'
             }`}
           >
             {editMode ? (
@@ -140,7 +140,7 @@ export default function Pricing() {
           <div className="mt-12 flex justify-center gap-4 animate-fade-in-up">
             <button
               onClick={handleSave}
-              className="px-8 py-3 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition-smooth flex items-center gap-2 shadow-md"
+              className="px-8 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg font-semibold hover:shadow-elevated transition-smooth flex items-center gap-2 shadow-elevated transform hover:scale-105"
             >
               <Check size={20} />
               Save Changes
@@ -150,7 +150,7 @@ export default function Pricing() {
                 setTempPrices(prices)
                 setEditMode(false)
               }}
-              className="px-8 py-3 border-2 border-[#e5e7eb] text-[#334247] rounded-lg font-semibold hover:bg-[#f5f7f9] transition-smooth"
+              className="px-8 py-3 border-2 border-[#b4c7d4]/50 text-white rounded-lg font-semibold hover:bg-white/10 transition-smooth"
             >
               Cancel
             </button>

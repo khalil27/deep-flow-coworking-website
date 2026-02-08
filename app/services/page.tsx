@@ -1,6 +1,3 @@
-'use client'
-
-import { useState } from 'react'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import Link from 'next/link'
@@ -41,19 +38,19 @@ export default function ServicesPage() {
     <div className="min-h-screen">
       <Navbar />
       
-      <main className="bg-background pt-20 pb-20">
+      <main className="bg-gradient-to-br from-[#334247] to-[#4f8fa3] pt-20 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Our Services</h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Choose the perfect service for your business needs</p>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Services</h1>
+            <p className="text-lg text-[#b4c7d4] max-w-2xl mx-auto">Choose the perfect service for your business needs</p>
           </div>
 
           {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service) => (
               <Link key={service.id} href={service.href}>
-                <div className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden cursor-pointer group">
+                <div className="bg-white/10 backdrop-blur-md border border-[#b4c7d4]/30 rounded-lg shadow-lg hover:shadow-xl hover:bg-white/15 transition-all duration-300 overflow-hidden cursor-pointer group">
                   {/* Service Card */}
                   <div className={`bg-gradient-to-br ${service.color} h-48 flex items-center justify-center`}>
                     <div className="text-white text-center">
@@ -63,10 +60,10 @@ export default function ServicesPage() {
                   </div>
                   
                   <div className="p-6">
-                    <h2 className="text-2xl font-bold text-foreground mb-2">{service.title}</h2>
-                    <p className="text-muted-foreground">{service.description}</p>
+                    <h2 className="text-2xl font-bold text-white mb-2">{service.title}</h2>
+                    <p className="text-[#b4c7d4]">{service.description}</p>
                     <div className="mt-4">
-                      <span className="text-primary font-semibold group-hover:translate-x-1 transition-transform inline-block">
+                      <span className="text-[#b4c7d4] font-semibold group-hover:translate-x-1 transition-transform inline-block group-hover:text-white">
                         View Details →
                       </span>
                     </div>

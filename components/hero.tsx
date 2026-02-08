@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export default function Hero() {
   return (
     <section id="home" className="relative overflow-hidden pt-32 pb-48 sm:pt-48 sm:pb-64">
@@ -35,10 +37,13 @@ export default function Hero() {
           {/* Right visual */}
           <div className="relative h-96 sm:h-[500px] lg:h-[550px] animate-slide-in-right">
             <div className="absolute inset-0 bg-white/10 rounded-2xl border border-white/30 flex items-center justify-center backdrop-blur-md shadow-2xl overflow-hidden group hover:shadow-3xl transition-smooth">
-              <img 
-                src="/deepflowhomepage.png" 
-                alt="Deep Flow Coworking Hero" 
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              <Image
+                src="/deepflowhomepage.png"
+                alt="Deep Flow Coworking Hero"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover group-hover:scale-110 transition-transform duration-500"
               />
             </div>
           </div>
